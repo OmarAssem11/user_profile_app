@@ -8,11 +8,11 @@ import 'package:injectable/injectable.dart';
 
 @injectable
 class Login implements UseCase<Unit, LoginData> {
-  AuthRepository authRepository;
-  Login(this.authRepository);
+  final AuthRepository _authRepository;
+  Login(this._authRepository);
   @override
-  Future<Either<Failure, Unit>> call(LoginData loginData) async =>
-      authRepository.login(
+  Future<Either<Failure, Unit>> call(LoginData loginData) =>
+      _authRepository.login(
         loginEntity: loginData.loginEntity,
       );
 }

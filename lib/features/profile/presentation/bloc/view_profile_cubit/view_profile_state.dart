@@ -1,0 +1,12 @@
+import 'package:final_project/core/domain/entities/user.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+part 'view_profile_state.freezed.dart';
+
+@freezed
+class ViewProfileState with _$ViewProfileState {
+  const factory ViewProfileState.initial() = ViewProfileInitial;
+  const factory ViewProfileState.loading() = ViewProfileLoading;
+  const factory ViewProfileState.success(final User user) = ViewProfileSuccess;
+  const factory ViewProfileState.error(final String error) =
+      ViewProfileErrorDetails;
+}

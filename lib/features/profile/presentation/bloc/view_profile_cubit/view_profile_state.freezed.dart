@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'profile_state.dart';
+part of 'view_profile_state.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,35 +15,35 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$ProfileStateTearOff {
-  const _$ProfileStateTearOff();
+class _$ViewProfileStateTearOff {
+  const _$ViewProfileStateTearOff();
 
-  ProfileInitial initial() {
-    return const ProfileInitial();
+  ViewProfileInitial initial() {
+    return const ViewProfileInitial();
   }
 
-  ProfileLoading loading() {
-    return const ProfileLoading();
+  ViewProfileLoading loading() {
+    return const ViewProfileLoading();
   }
 
-  ProfileSuccess success(User user) {
-    return ProfileSuccess(
+  ViewProfileSuccess success(User user) {
+    return ViewProfileSuccess(
       user,
     );
   }
 
-  ProfileErrorDetails error(String error) {
-    return ProfileErrorDetails(
+  ViewProfileErrorDetails error(String error) {
+    return ViewProfileErrorDetails(
       error,
     );
   }
 }
 
 /// @nodoc
-const $ProfileState = _$ProfileStateTearOff();
+const $ViewProfileState = _$ViewProfileStateTearOff();
 
 /// @nodoc
-mixin _$ProfileState {
+mixin _$ViewProfileState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
@@ -71,80 +71,81 @@ mixin _$ProfileState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ProfileInitial value) initial,
-    required TResult Function(ProfileLoading value) loading,
-    required TResult Function(ProfileSuccess value) success,
-    required TResult Function(ProfileErrorDetails value) error,
+    required TResult Function(ViewProfileInitial value) initial,
+    required TResult Function(ViewProfileLoading value) loading,
+    required TResult Function(ViewProfileSuccess value) success,
+    required TResult Function(ViewProfileErrorDetails value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ProfileInitial value)? initial,
-    TResult Function(ProfileLoading value)? loading,
-    TResult Function(ProfileSuccess value)? success,
-    TResult Function(ProfileErrorDetails value)? error,
+    TResult Function(ViewProfileInitial value)? initial,
+    TResult Function(ViewProfileLoading value)? loading,
+    TResult Function(ViewProfileSuccess value)? success,
+    TResult Function(ViewProfileErrorDetails value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ProfileInitial value)? initial,
-    TResult Function(ProfileLoading value)? loading,
-    TResult Function(ProfileSuccess value)? success,
-    TResult Function(ProfileErrorDetails value)? error,
+    TResult Function(ViewProfileInitial value)? initial,
+    TResult Function(ViewProfileLoading value)? loading,
+    TResult Function(ViewProfileSuccess value)? success,
+    TResult Function(ViewProfileErrorDetails value)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ProfileStateCopyWith<$Res> {
-  factory $ProfileStateCopyWith(
-          ProfileState value, $Res Function(ProfileState) then) =
-      _$ProfileStateCopyWithImpl<$Res>;
+abstract class $ViewProfileStateCopyWith<$Res> {
+  factory $ViewProfileStateCopyWith(
+          ViewProfileState value, $Res Function(ViewProfileState) then) =
+      _$ViewProfileStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ProfileStateCopyWithImpl<$Res> implements $ProfileStateCopyWith<$Res> {
-  _$ProfileStateCopyWithImpl(this._value, this._then);
+class _$ViewProfileStateCopyWithImpl<$Res>
+    implements $ViewProfileStateCopyWith<$Res> {
+  _$ViewProfileStateCopyWithImpl(this._value, this._then);
 
-  final ProfileState _value;
+  final ViewProfileState _value;
   // ignore: unused_field
-  final $Res Function(ProfileState) _then;
+  final $Res Function(ViewProfileState) _then;
 }
 
 /// @nodoc
-abstract class $ProfileInitialCopyWith<$Res> {
-  factory $ProfileInitialCopyWith(
-          ProfileInitial value, $Res Function(ProfileInitial) then) =
-      _$ProfileInitialCopyWithImpl<$Res>;
+abstract class $ViewProfileInitialCopyWith<$Res> {
+  factory $ViewProfileInitialCopyWith(
+          ViewProfileInitial value, $Res Function(ViewProfileInitial) then) =
+      _$ViewProfileInitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ProfileInitialCopyWithImpl<$Res>
-    extends _$ProfileStateCopyWithImpl<$Res>
-    implements $ProfileInitialCopyWith<$Res> {
-  _$ProfileInitialCopyWithImpl(
-      ProfileInitial _value, $Res Function(ProfileInitial) _then)
-      : super(_value, (v) => _then(v as ProfileInitial));
+class _$ViewProfileInitialCopyWithImpl<$Res>
+    extends _$ViewProfileStateCopyWithImpl<$Res>
+    implements $ViewProfileInitialCopyWith<$Res> {
+  _$ViewProfileInitialCopyWithImpl(
+      ViewProfileInitial _value, $Res Function(ViewProfileInitial) _then)
+      : super(_value, (v) => _then(v as ViewProfileInitial));
 
   @override
-  ProfileInitial get _value => super._value as ProfileInitial;
+  ViewProfileInitial get _value => super._value as ViewProfileInitial;
 }
 
 /// @nodoc
 
-class _$ProfileInitial implements ProfileInitial {
-  const _$ProfileInitial();
+class _$ViewProfileInitial implements ViewProfileInitial {
+  const _$ViewProfileInitial();
 
   @override
   String toString() {
-    return 'ProfileState.initial()';
+    return 'ViewProfileState.initial()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is ProfileInitial);
+        (other.runtimeType == runtimeType && other is ViewProfileInitial);
   }
 
   @override
@@ -190,10 +191,10 @@ class _$ProfileInitial implements ProfileInitial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ProfileInitial value) initial,
-    required TResult Function(ProfileLoading value) loading,
-    required TResult Function(ProfileSuccess value) success,
-    required TResult Function(ProfileErrorDetails value) error,
+    required TResult Function(ViewProfileInitial value) initial,
+    required TResult Function(ViewProfileLoading value) loading,
+    required TResult Function(ViewProfileSuccess value) success,
+    required TResult Function(ViewProfileErrorDetails value) error,
   }) {
     return initial(this);
   }
@@ -201,10 +202,10 @@ class _$ProfileInitial implements ProfileInitial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ProfileInitial value)? initial,
-    TResult Function(ProfileLoading value)? loading,
-    TResult Function(ProfileSuccess value)? success,
-    TResult Function(ProfileErrorDetails value)? error,
+    TResult Function(ViewProfileInitial value)? initial,
+    TResult Function(ViewProfileLoading value)? loading,
+    TResult Function(ViewProfileSuccess value)? success,
+    TResult Function(ViewProfileErrorDetails value)? error,
   }) {
     return initial?.call(this);
   }
@@ -212,10 +213,10 @@ class _$ProfileInitial implements ProfileInitial {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ProfileInitial value)? initial,
-    TResult Function(ProfileLoading value)? loading,
-    TResult Function(ProfileSuccess value)? success,
-    TResult Function(ProfileErrorDetails value)? error,
+    TResult Function(ViewProfileInitial value)? initial,
+    TResult Function(ViewProfileLoading value)? loading,
+    TResult Function(ViewProfileSuccess value)? success,
+    TResult Function(ViewProfileErrorDetails value)? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -225,43 +226,43 @@ class _$ProfileInitial implements ProfileInitial {
   }
 }
 
-abstract class ProfileInitial implements ProfileState {
-  const factory ProfileInitial() = _$ProfileInitial;
+abstract class ViewProfileInitial implements ViewProfileState {
+  const factory ViewProfileInitial() = _$ViewProfileInitial;
 }
 
 /// @nodoc
-abstract class $ProfileLoadingCopyWith<$Res> {
-  factory $ProfileLoadingCopyWith(
-          ProfileLoading value, $Res Function(ProfileLoading) then) =
-      _$ProfileLoadingCopyWithImpl<$Res>;
+abstract class $ViewProfileLoadingCopyWith<$Res> {
+  factory $ViewProfileLoadingCopyWith(
+          ViewProfileLoading value, $Res Function(ViewProfileLoading) then) =
+      _$ViewProfileLoadingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ProfileLoadingCopyWithImpl<$Res>
-    extends _$ProfileStateCopyWithImpl<$Res>
-    implements $ProfileLoadingCopyWith<$Res> {
-  _$ProfileLoadingCopyWithImpl(
-      ProfileLoading _value, $Res Function(ProfileLoading) _then)
-      : super(_value, (v) => _then(v as ProfileLoading));
+class _$ViewProfileLoadingCopyWithImpl<$Res>
+    extends _$ViewProfileStateCopyWithImpl<$Res>
+    implements $ViewProfileLoadingCopyWith<$Res> {
+  _$ViewProfileLoadingCopyWithImpl(
+      ViewProfileLoading _value, $Res Function(ViewProfileLoading) _then)
+      : super(_value, (v) => _then(v as ViewProfileLoading));
 
   @override
-  ProfileLoading get _value => super._value as ProfileLoading;
+  ViewProfileLoading get _value => super._value as ViewProfileLoading;
 }
 
 /// @nodoc
 
-class _$ProfileLoading implements ProfileLoading {
-  const _$ProfileLoading();
+class _$ViewProfileLoading implements ViewProfileLoading {
+  const _$ViewProfileLoading();
 
   @override
   String toString() {
-    return 'ProfileState.loading()';
+    return 'ViewProfileState.loading()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is ProfileLoading);
+        (other.runtimeType == runtimeType && other is ViewProfileLoading);
   }
 
   @override
@@ -307,10 +308,10 @@ class _$ProfileLoading implements ProfileLoading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ProfileInitial value) initial,
-    required TResult Function(ProfileLoading value) loading,
-    required TResult Function(ProfileSuccess value) success,
-    required TResult Function(ProfileErrorDetails value) error,
+    required TResult Function(ViewProfileInitial value) initial,
+    required TResult Function(ViewProfileLoading value) loading,
+    required TResult Function(ViewProfileSuccess value) success,
+    required TResult Function(ViewProfileErrorDetails value) error,
   }) {
     return loading(this);
   }
@@ -318,10 +319,10 @@ class _$ProfileLoading implements ProfileLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ProfileInitial value)? initial,
-    TResult Function(ProfileLoading value)? loading,
-    TResult Function(ProfileSuccess value)? success,
-    TResult Function(ProfileErrorDetails value)? error,
+    TResult Function(ViewProfileInitial value)? initial,
+    TResult Function(ViewProfileLoading value)? loading,
+    TResult Function(ViewProfileSuccess value)? success,
+    TResult Function(ViewProfileErrorDetails value)? error,
   }) {
     return loading?.call(this);
   }
@@ -329,10 +330,10 @@ class _$ProfileLoading implements ProfileLoading {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ProfileInitial value)? initial,
-    TResult Function(ProfileLoading value)? loading,
-    TResult Function(ProfileSuccess value)? success,
-    TResult Function(ProfileErrorDetails value)? error,
+    TResult Function(ViewProfileInitial value)? initial,
+    TResult Function(ViewProfileLoading value)? loading,
+    TResult Function(ViewProfileSuccess value)? success,
+    TResult Function(ViewProfileErrorDetails value)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -342,34 +343,34 @@ class _$ProfileLoading implements ProfileLoading {
   }
 }
 
-abstract class ProfileLoading implements ProfileState {
-  const factory ProfileLoading() = _$ProfileLoading;
+abstract class ViewProfileLoading implements ViewProfileState {
+  const factory ViewProfileLoading() = _$ViewProfileLoading;
 }
 
 /// @nodoc
-abstract class $ProfileSuccessCopyWith<$Res> {
-  factory $ProfileSuccessCopyWith(
-          ProfileSuccess value, $Res Function(ProfileSuccess) then) =
-      _$ProfileSuccessCopyWithImpl<$Res>;
+abstract class $ViewProfileSuccessCopyWith<$Res> {
+  factory $ViewProfileSuccessCopyWith(
+          ViewProfileSuccess value, $Res Function(ViewProfileSuccess) then) =
+      _$ViewProfileSuccessCopyWithImpl<$Res>;
   $Res call({User user});
 }
 
 /// @nodoc
-class _$ProfileSuccessCopyWithImpl<$Res>
-    extends _$ProfileStateCopyWithImpl<$Res>
-    implements $ProfileSuccessCopyWith<$Res> {
-  _$ProfileSuccessCopyWithImpl(
-      ProfileSuccess _value, $Res Function(ProfileSuccess) _then)
-      : super(_value, (v) => _then(v as ProfileSuccess));
+class _$ViewProfileSuccessCopyWithImpl<$Res>
+    extends _$ViewProfileStateCopyWithImpl<$Res>
+    implements $ViewProfileSuccessCopyWith<$Res> {
+  _$ViewProfileSuccessCopyWithImpl(
+      ViewProfileSuccess _value, $Res Function(ViewProfileSuccess) _then)
+      : super(_value, (v) => _then(v as ViewProfileSuccess));
 
   @override
-  ProfileSuccess get _value => super._value as ProfileSuccess;
+  ViewProfileSuccess get _value => super._value as ViewProfileSuccess;
 
   @override
   $Res call({
     Object? user = freezed,
   }) {
-    return _then(ProfileSuccess(
+    return _then(ViewProfileSuccess(
       user == freezed
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
@@ -380,22 +381,22 @@ class _$ProfileSuccessCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ProfileSuccess implements ProfileSuccess {
-  const _$ProfileSuccess(this.user);
+class _$ViewProfileSuccess implements ViewProfileSuccess {
+  const _$ViewProfileSuccess(this.user);
 
   @override
   final User user;
 
   @override
   String toString() {
-    return 'ProfileState.success(user: $user)';
+    return 'ViewProfileState.success(user: $user)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is ProfileSuccess &&
+            other is ViewProfileSuccess &&
             const DeepCollectionEquality().equals(other.user, user));
   }
 
@@ -405,8 +406,8 @@ class _$ProfileSuccess implements ProfileSuccess {
 
   @JsonKey(ignore: true)
   @override
-  $ProfileSuccessCopyWith<ProfileSuccess> get copyWith =>
-      _$ProfileSuccessCopyWithImpl<ProfileSuccess>(this, _$identity);
+  $ViewProfileSuccessCopyWith<ViewProfileSuccess> get copyWith =>
+      _$ViewProfileSuccessCopyWithImpl<ViewProfileSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -448,10 +449,10 @@ class _$ProfileSuccess implements ProfileSuccess {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ProfileInitial value) initial,
-    required TResult Function(ProfileLoading value) loading,
-    required TResult Function(ProfileSuccess value) success,
-    required TResult Function(ProfileErrorDetails value) error,
+    required TResult Function(ViewProfileInitial value) initial,
+    required TResult Function(ViewProfileLoading value) loading,
+    required TResult Function(ViewProfileSuccess value) success,
+    required TResult Function(ViewProfileErrorDetails value) error,
   }) {
     return success(this);
   }
@@ -459,10 +460,10 @@ class _$ProfileSuccess implements ProfileSuccess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ProfileInitial value)? initial,
-    TResult Function(ProfileLoading value)? loading,
-    TResult Function(ProfileSuccess value)? success,
-    TResult Function(ProfileErrorDetails value)? error,
+    TResult Function(ViewProfileInitial value)? initial,
+    TResult Function(ViewProfileLoading value)? loading,
+    TResult Function(ViewProfileSuccess value)? success,
+    TResult Function(ViewProfileErrorDetails value)? error,
   }) {
     return success?.call(this);
   }
@@ -470,10 +471,10 @@ class _$ProfileSuccess implements ProfileSuccess {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ProfileInitial value)? initial,
-    TResult Function(ProfileLoading value)? loading,
-    TResult Function(ProfileSuccess value)? success,
-    TResult Function(ProfileErrorDetails value)? error,
+    TResult Function(ViewProfileInitial value)? initial,
+    TResult Function(ViewProfileLoading value)? loading,
+    TResult Function(ViewProfileSuccess value)? success,
+    TResult Function(ViewProfileErrorDetails value)? error,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -483,39 +484,39 @@ class _$ProfileSuccess implements ProfileSuccess {
   }
 }
 
-abstract class ProfileSuccess implements ProfileState {
-  const factory ProfileSuccess(User user) = _$ProfileSuccess;
+abstract class ViewProfileSuccess implements ViewProfileState {
+  const factory ViewProfileSuccess(User user) = _$ViewProfileSuccess;
 
   User get user;
   @JsonKey(ignore: true)
-  $ProfileSuccessCopyWith<ProfileSuccess> get copyWith =>
+  $ViewProfileSuccessCopyWith<ViewProfileSuccess> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ProfileErrorDetailsCopyWith<$Res> {
-  factory $ProfileErrorDetailsCopyWith(
-          ProfileErrorDetails value, $Res Function(ProfileErrorDetails) then) =
-      _$ProfileErrorDetailsCopyWithImpl<$Res>;
+abstract class $ViewProfileErrorDetailsCopyWith<$Res> {
+  factory $ViewProfileErrorDetailsCopyWith(ViewProfileErrorDetails value,
+          $Res Function(ViewProfileErrorDetails) then) =
+      _$ViewProfileErrorDetailsCopyWithImpl<$Res>;
   $Res call({String error});
 }
 
 /// @nodoc
-class _$ProfileErrorDetailsCopyWithImpl<$Res>
-    extends _$ProfileStateCopyWithImpl<$Res>
-    implements $ProfileErrorDetailsCopyWith<$Res> {
-  _$ProfileErrorDetailsCopyWithImpl(
-      ProfileErrorDetails _value, $Res Function(ProfileErrorDetails) _then)
-      : super(_value, (v) => _then(v as ProfileErrorDetails));
+class _$ViewProfileErrorDetailsCopyWithImpl<$Res>
+    extends _$ViewProfileStateCopyWithImpl<$Res>
+    implements $ViewProfileErrorDetailsCopyWith<$Res> {
+  _$ViewProfileErrorDetailsCopyWithImpl(ViewProfileErrorDetails _value,
+      $Res Function(ViewProfileErrorDetails) _then)
+      : super(_value, (v) => _then(v as ViewProfileErrorDetails));
 
   @override
-  ProfileErrorDetails get _value => super._value as ProfileErrorDetails;
+  ViewProfileErrorDetails get _value => super._value as ViewProfileErrorDetails;
 
   @override
   $Res call({
     Object? error = freezed,
   }) {
-    return _then(ProfileErrorDetails(
+    return _then(ViewProfileErrorDetails(
       error == freezed
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -526,22 +527,22 @@ class _$ProfileErrorDetailsCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ProfileErrorDetails implements ProfileErrorDetails {
-  const _$ProfileErrorDetails(this.error);
+class _$ViewProfileErrorDetails implements ViewProfileErrorDetails {
+  const _$ViewProfileErrorDetails(this.error);
 
   @override
   final String error;
 
   @override
   String toString() {
-    return 'ProfileState.error(error: $error)';
+    return 'ViewProfileState.error(error: $error)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is ProfileErrorDetails &&
+            other is ViewProfileErrorDetails &&
             const DeepCollectionEquality().equals(other.error, error));
   }
 
@@ -551,8 +552,9 @@ class _$ProfileErrorDetails implements ProfileErrorDetails {
 
   @JsonKey(ignore: true)
   @override
-  $ProfileErrorDetailsCopyWith<ProfileErrorDetails> get copyWith =>
-      _$ProfileErrorDetailsCopyWithImpl<ProfileErrorDetails>(this, _$identity);
+  $ViewProfileErrorDetailsCopyWith<ViewProfileErrorDetails> get copyWith =>
+      _$ViewProfileErrorDetailsCopyWithImpl<ViewProfileErrorDetails>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -594,10 +596,10 @@ class _$ProfileErrorDetails implements ProfileErrorDetails {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ProfileInitial value) initial,
-    required TResult Function(ProfileLoading value) loading,
-    required TResult Function(ProfileSuccess value) success,
-    required TResult Function(ProfileErrorDetails value) error,
+    required TResult Function(ViewProfileInitial value) initial,
+    required TResult Function(ViewProfileLoading value) loading,
+    required TResult Function(ViewProfileSuccess value) success,
+    required TResult Function(ViewProfileErrorDetails value) error,
   }) {
     return error(this);
   }
@@ -605,10 +607,10 @@ class _$ProfileErrorDetails implements ProfileErrorDetails {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ProfileInitial value)? initial,
-    TResult Function(ProfileLoading value)? loading,
-    TResult Function(ProfileSuccess value)? success,
-    TResult Function(ProfileErrorDetails value)? error,
+    TResult Function(ViewProfileInitial value)? initial,
+    TResult Function(ViewProfileLoading value)? loading,
+    TResult Function(ViewProfileSuccess value)? success,
+    TResult Function(ViewProfileErrorDetails value)? error,
   }) {
     return error?.call(this);
   }
@@ -616,10 +618,10 @@ class _$ProfileErrorDetails implements ProfileErrorDetails {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ProfileInitial value)? initial,
-    TResult Function(ProfileLoading value)? loading,
-    TResult Function(ProfileSuccess value)? success,
-    TResult Function(ProfileErrorDetails value)? error,
+    TResult Function(ViewProfileInitial value)? initial,
+    TResult Function(ViewProfileLoading value)? loading,
+    TResult Function(ViewProfileSuccess value)? success,
+    TResult Function(ViewProfileErrorDetails value)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -629,11 +631,12 @@ class _$ProfileErrorDetails implements ProfileErrorDetails {
   }
 }
 
-abstract class ProfileErrorDetails implements ProfileState {
-  const factory ProfileErrorDetails(String error) = _$ProfileErrorDetails;
+abstract class ViewProfileErrorDetails implements ViewProfileState {
+  const factory ViewProfileErrorDetails(String error) =
+      _$ViewProfileErrorDetails;
 
   String get error;
   @JsonKey(ignore: true)
-  $ProfileErrorDetailsCopyWith<ProfileErrorDetails> get copyWith =>
+  $ViewProfileErrorDetailsCopyWith<ViewProfileErrorDetails> get copyWith =>
       throw _privateConstructorUsedError;
 }

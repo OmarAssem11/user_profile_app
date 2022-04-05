@@ -7,7 +7,6 @@ class User extends Equatable {
   final String phone;
   final String imageUrl;
   final String address;
-
   final String age;
 
   const User({

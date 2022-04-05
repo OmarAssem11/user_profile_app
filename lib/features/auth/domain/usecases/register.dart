@@ -8,19 +8,18 @@ import 'package:injectable/injectable.dart';
 
 @injectable
 class Register implements UseCase<Unit, RegisterData> {
-  AuthRepository authRepository;
-  Register(this.authRepository);
+  final AuthRepository _authRepository;
+  Register(this._authRepository);
 
   @override
-  Future<Either<Failure, Unit>> call(RegisterData registerData) async =>
-      authRepository.register(
+  Future<Either<Failure, Unit>> call(RegisterData registerData) =>
+      _authRepository.register(
         user: registerData.user,
       );
 }
 
 class RegisterData extends Equatable {
   final User user;
-
   const RegisterData({
     required this.user,
   });

@@ -4,21 +4,16 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 @Injectable(as: LocalDataSource)
 class LocalDataSourceImpl implements LocalDataSource {
-  SharedPreferences sharedPreferences;
-  LocalDataSourceImpl(this.sharedPreferences);
+  final SharedPreferences _sharedPreferences;
+  LocalDataSourceImpl(this._sharedPreferences);
 
   @override
-  Future<bool> saveToken(String token) async {
-    return sharedPreferences.setString('token', token);
-  }
+  Future<bool> saveToken(String token) async =>
+      _sharedPreferences.setString('token', token);
 
   @override
-  String? getToken() {
-    return sharedPreferences.getString('token');
-  }
+  String? getToken() => _sharedPreferences.getString('token');
 
   @override
-  void deleteToken() {
-    sharedPreferences.remove('token');
-  }
+  Future<void> deleteToken() async => _sharedPreferences.remove('token');
 }

@@ -7,12 +7,12 @@ import 'package:injectable/injectable.dart';
 
 @injectable
 class ViewProfile implements UseCase<User, NoParams> {
-  ProfileRepository profileRepository;
-  ViewProfile(this.profileRepository);
+  final ProfileRepository _profileRepository;
+  ViewProfile(this._profileRepository);
 
   @override
   Future<Either<Failure, User>> call(
     NoParams noParams,
-  ) async =>
-      profileRepository.viewProfile();
+  ) =>
+      _profileRepository.viewProfile();
 }

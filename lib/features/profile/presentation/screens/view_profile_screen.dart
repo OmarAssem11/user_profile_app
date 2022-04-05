@@ -2,8 +2,8 @@ import 'package:final_project/core/presentation/widgets/custom_elevated_button.d
 import 'package:final_project/features/auth/presentation/bloc/auth_cubit.dart';
 import 'package:final_project/features/auth/presentation/screens/login_screen.dart';
 import 'package:final_project/features/auth/presentation/widgets/logout_widget.dart';
-import 'package:final_project/features/profile/presentation/bloc/profile_cubit.dart';
-import 'package:final_project/features/profile/presentation/bloc/profile_state.dart';
+import 'package:final_project/features/profile/presentation/bloc/view_profile_cubit/view_profile_cubit.dart';
+import 'package:final_project/features/profile/presentation/bloc/view_profile_cubit/view_profile_state.dart';
 import 'package:final_project/features/profile/presentation/screens/edit_profile_screen.dart';
 import 'package:final_project/features/profile/presentation/widgets/profile_image_widget.dart';
 import 'package:final_project/features/profile/presentation/widgets/profile_item_widget.dart';
@@ -22,17 +22,18 @@ class ViewProfileScreen extends StatelessWidget {
           LogoutWidget(
             onPressed: () {
               BlocProvider.of<AuthCubit>(context).logout();
+              Navigator.of(context).popUntil((route) => route.isFirst);
               Navigator.of(context).pushReplacementNamed(LoginScreen.routeName);
             },
           ),
         ],
       ),
-      body: BlocBuilder<ProfileCubit, ProfileState>(
+      body: BlocBuilder<ViewProfileCubit, ViewProfileState>(
         builder: (context, state) {
           return state.maybeWhen(
             initial: () {
               WidgetsBinding.instance!.addPostFrameCallback(
-                (_) => BlocProvider.of<ProfileCubit>(context).viewProfile(),
+                (_) => BlocProvider.of<ViewProfileCubit>(context).viewProfile(),
               );
               return Container();
             },

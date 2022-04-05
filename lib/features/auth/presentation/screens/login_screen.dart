@@ -14,8 +14,8 @@ class LoginScreen extends StatelessWidget {
   LoginScreen();
   static const routeName = '/';
   final _formKey = GlobalKey<FormState>();
-  final emailController = TextEditingController();
-  final passwordController = TextEditingController();
+  final emailController = TextEditingController(text: 'omar@gmail.com');
+  final passwordController = TextEditingController(text: '123456');
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;

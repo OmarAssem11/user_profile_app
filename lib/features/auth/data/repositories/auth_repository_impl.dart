@@ -11,20 +11,20 @@ import 'package:injectable/injectable.dart';
 
 @Injectable(as: AuthRepository)
 class AuthRepositoryImpl implements AuthRepository {
-  AuthService authService;
-  LocalDataSource localDataSource;
-  AuthRepositoryImpl({
-    required this.authService,
-    required this.localDataSource,
-  });
+  final AuthService _authService;
+  final LocalDataSource _localDataSource;
+  AuthRepositoryImpl(
+    this._authService,
+    this._localDataSource,
+  );
 
   @override
   Future<Either<Failure, Unit>> register({
     required User user,
   }) async {
     try {
-      final token = await authService.register(userModel: user.toModel());
-      localDataSource.saveToken(token.token);
+      final token = await _authService.register(userModel: user.toModel());
+      await _localDataSource.saveToken(token.token);
       return right(unit);
     } catch (error) {
       return left(Failure(error));
@@ -36,10 +36,10 @@ class AuthRepositoryImpl implements AuthRepository {
     required LoginEntity loginEntity,
   }) async {
     try {
-      final token = await authService.login(
+      final token = await _authService.login(
         loginModel: loginEntity.toModel(),
       );
-      localDataSource.saveToken(token.token);
+      await _localDataSource.saveToken(token.token);
       return right(unit);
     } catch (error) {
       return left(Failure(error));
@@ -49,7 +49,7 @@ class AuthRepositoryImpl implements AuthRepository {
   @override
   Future<Either<Failure, Unit>> logout() async {
     try {
-      localDataSource.deleteToken();
+      await _localDataSource.deleteToken();
       return right(unit);
     } catch (error) {
       return left(Failure(error));
