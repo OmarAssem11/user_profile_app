@@ -4,8 +4,8 @@ import 'package:final_project/core/domain/error/error_toast.dart';
 import 'package:final_project/core/presentation/validation/validators.dart';
 import 'package:final_project/core/presentation/widgets/custom_elevated_button.dart';
 import 'package:final_project/core/presentation/widgets/custom_text_form_field.dart';
-import 'package:final_project/features/profile/presentation/bloc/profile_cubit.dart';
-import 'package:final_project/features/profile/presentation/bloc/profile_state.dart';
+import 'package:final_project/features/profile/presentation/bloc/edit_profile_cubit/edit_profile_cubit.dart';
+import 'package:final_project/features/profile/presentation/bloc/edit_profile_cubit/edit_profile_state.dart';
 import 'package:final_project/features/profile/presentation/screens/view_profile_screen.dart';
 import 'package:final_project/features/profile/presentation/widgets/edit_profile_image_widget.dart';
 import 'package:flutter/material.dart';
@@ -18,6 +18,7 @@ class EditProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final user = ModalRoute.of(context)!.settings.arguments! as User;
+    final _formKey = GlobalKey<FormState>();
     final nameController = TextEditingController(text: user.name);
     final emailController = TextEditingController(text: user.email);
     final passwordController = TextEditingController();
@@ -25,7 +26,6 @@ class EditProfileScreen extends StatelessWidget {
     final addressController = TextEditingController(text: user.address);
     final ageController = TextEditingController(text: user.age);
     File? imageFile;
-    final _formKey = GlobalKey<FormState>();
     return Scaffold(
       appBar: AppBar(
         title: const Text('Edit profile'),
@@ -33,13 +33,13 @@ class EditProfileScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16),
-          child: BlocBuilder<ProfileCubit, ProfileState>(
+          child: BlocBuilder<EditProfileCubit, EditProfileState>(
             builder: (context, state) {
               bool isLoading = false;
               state.maybeWhen(
                 loading: () => isLoading = true,
                 error: (error) => showErrorToast(errorMessage: error),
-                success: (_) {
+                success: () {
                   WidgetsBinding.instance!.addPostFrameCallback(
                     (_) {
                       Navigator.of(context).popUntil((route) => route.isFirst);
@@ -116,7 +116,8 @@ class EditProfileScreen extends StatelessWidget {
                       label: 'submit',
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
-                          BlocProvider.of<ProfileCubit>(context).editProfile(
+                          BlocProvider.of<EditProfileCubit>(context)
+                              .editProfile(
                             user: User(
                               name: nameController.text,
                               email: emailController.text,
