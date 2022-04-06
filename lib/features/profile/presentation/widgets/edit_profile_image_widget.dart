@@ -1,5 +1,3 @@
-import 'package:final_project/core/presentation/theme/colors.dart';
-import 'package:final_project/features/profile/presentation/widgets/profile_image_widget.dart';
 import 'package:flutter/material.dart';
 
 class EditProfileImageWidget extends StatelessWidget {
@@ -13,15 +11,25 @@ class EditProfileImageWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        ProfileImageWidget(imageUrl),
+        Padding(
+          padding: const EdgeInsets.only(
+            bottom: 16,
+          ),
+          child: CircleAvatar(
+            backgroundImage: NetworkImage(
+              imageUrl,
+            ),
+            radius: 50,
+          ),
+        ),
         Positioned(
           right: 0,
           bottom: 8,
           child: IconButton(
             onPressed: onPressed,
-            icon: const Icon(
+            icon: Icon(
               Icons.camera_alt,
-              color: primaryColor,
+              color: Theme.of(context).colorScheme.primary,
               size: 24,
             ),
           ),

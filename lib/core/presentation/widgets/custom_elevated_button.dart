@@ -22,11 +22,16 @@ class CustomElevatedButton extends StatelessWidget {
             .07 * screenHeight,
           ),
         ),
+        shape: MaterialStateProperty.all(
+          const RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(20)),
+          ),
+        ),
       ),
       onPressed: onPressed,
       child: isLoading
           ? const CircularProgressIndicator(
-              color: Colors.black,
+              color: Colors.white,
             )
           : Text(label.toUpperCase()),
     );

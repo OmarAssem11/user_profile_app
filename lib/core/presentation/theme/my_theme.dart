@@ -1,12 +1,11 @@
-import 'package:final_project/core/presentation/theme/colors.dart';
 import 'package:flutter/material.dart';
 
 ThemeData myTheme = ThemeData(
   colorScheme: const ColorScheme(
     brightness: Brightness.light,
-    primary: primaryColor,
+    primary: Color(0xffDF3155),
     onPrimary: Colors.black,
-    secondary: Colors.black,
+    secondary: Color.fromARGB(255, 240, 240, 240),
     onSecondary: Colors.black,
     error: Colors.black,
     onError: Colors.black,
@@ -21,8 +20,9 @@ ThemeData myTheme = ThemeData(
       color: Colors.black,
       fontWeight: FontWeight.bold,
     ),
-    backgroundColor: primaryColor,
+    backgroundColor: Colors.white,
     foregroundColor: Colors.black,
+    elevation: 0,
   ),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ButtonStyle(
@@ -32,8 +32,8 @@ ThemeData myTheme = ThemeData(
           fontWeight: FontWeight.bold,
         ),
       ),
-      backgroundColor: MaterialStateProperty.all(primaryColor),
-      foregroundColor: MaterialStateProperty.all(Colors.black),
+      backgroundColor: MaterialStateProperty.all(const Color(0xffDF3155)),
+      foregroundColor: MaterialStateProperty.all(Colors.white),
     ),
   ),
   textButtonTheme: TextButtonThemeData(
@@ -45,7 +45,7 @@ ThemeData myTheme = ThemeData(
           fontWeight: FontWeight.bold,
         ),
       ),
-      foregroundColor: MaterialStateProperty.all(primaryColor),
+      foregroundColor: MaterialStateProperty.all(const Color(0xffDF3155)),
     ),
   ),
   textTheme: const TextTheme(

@@ -1,4 +1,3 @@
-import 'package:final_project/core/presentation/theme/colors.dart';
 import 'package:flutter/material.dart';
 
 class ProfileItemWidget extends StatelessWidget {
@@ -10,6 +9,7 @@ class ProfileItemWidget extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
     return Container(
       margin: const EdgeInsets.only(
         right: 22,
@@ -17,9 +17,9 @@ class ProfileItemWidget extends StatelessWidget {
         top: 16,
       ),
       padding: const EdgeInsets.all(16),
-      decoration: const BoxDecoration(
-        color: secondaryColor,
-        borderRadius: BorderRadius.all(
+      decoration: BoxDecoration(
+        color: colorScheme.secondary,
+        borderRadius: const BorderRadius.all(
           Radius.circular(16),
         ),
       ),
@@ -28,7 +28,7 @@ class ProfileItemWidget extends StatelessWidget {
           Icon(
             icon,
             size: 28,
-            color: primaryColor,
+            color: colorScheme.primary,
           ),
           const SizedBox(width: 16),
           Text(
