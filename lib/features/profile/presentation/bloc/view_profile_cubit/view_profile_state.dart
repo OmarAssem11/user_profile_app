@@ -1,5 +1,5 @@
-import 'package:final_project/core/domain/entities/user.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:user_profile/core/domain/entities/user.dart';
 part 'view_profile_state.freezed.dart';
 
 @freezed

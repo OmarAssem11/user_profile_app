@@ -1,4 +1,4 @@
-import 'package:final_project/core/domain/entities/user.dart';
+import 'package:user_profile/core/domain/entities/user.dart';
 
 class UserModel extends User {
   const UserModel({

@@ -1,8 +1,7 @@
 import 'package:equatable/equatable.dart';
 
 class Failure extends Equatable {
-  final dynamic error;
-
+  final String error;
   const Failure(this.error);
 
   @override

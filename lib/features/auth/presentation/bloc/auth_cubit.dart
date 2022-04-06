@@ -1,12 +1,12 @@
-import 'package:final_project/core/domain/entities/user.dart';
-import 'package:final_project/core/domain/usecases/usecase.dart';
-import 'package:final_project/features/auth/domain/entities/login_entity.dart';
-import 'package:final_project/features/auth/domain/usecases/login.dart';
-import 'package:final_project/features/auth/domain/usecases/logout.dart';
-import 'package:final_project/features/auth/domain/usecases/register.dart';
-import 'package:final_project/features/auth/presentation/bloc/auth_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
+import 'package:user_profile/core/domain/entities/user.dart';
+import 'package:user_profile/core/domain/usecases/usecase.dart';
+import 'package:user_profile/features/auth/domain/entities/login_entity.dart';
+import 'package:user_profile/features/auth/domain/usecases/login_use_case.dart';
+import 'package:user_profile/features/auth/domain/usecases/logout_use_case.dart';
+import 'package:user_profile/features/auth/domain/usecases/register_use_case.dart';
+import 'package:user_profile/features/auth/presentation/bloc/auth_state.dart';
 
 @injectable
 class AuthCubit extends Cubit<AuthState> {
@@ -15,9 +15,9 @@ class AuthCubit extends Cubit<AuthState> {
     this._loginUseCase,
     this._logout,
   ) : super(const AuthInitial());
-  final Register _registerUserCase;
-  final Login _loginUseCase;
-  final Logout _logout;
+  final RegisterUseCase _registerUserCase;
+  final LoginUseCase _loginUseCase;
+  final LogoutUseCase _logout;
 
   Future<void> register({required User user}) async {
     emit(const AuthLoading());

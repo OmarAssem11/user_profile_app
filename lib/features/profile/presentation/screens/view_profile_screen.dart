@@ -1,13 +1,13 @@
-import 'package:final_project/core/presentation/widgets/custom_elevated_button.dart';
-import 'package:final_project/features/auth/presentation/bloc/auth_cubit.dart';
-import 'package:final_project/features/auth/presentation/screens/login_screen.dart';
-import 'package:final_project/features/auth/presentation/widgets/logout_widget.dart';
-import 'package:final_project/features/profile/presentation/bloc/view_profile_cubit/view_profile_cubit.dart';
-import 'package:final_project/features/profile/presentation/bloc/view_profile_cubit/view_profile_state.dart';
-import 'package:final_project/features/profile/presentation/screens/edit_profile_screen.dart';
-import 'package:final_project/features/profile/presentation/widgets/profile_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:user_profile/core/presentation/widgets/custom_elevated_button.dart';
+import 'package:user_profile/features/auth/presentation/bloc/auth_cubit.dart';
+import 'package:user_profile/features/auth/presentation/screens/login_screen.dart';
+import 'package:user_profile/features/auth/presentation/widgets/logout_widget.dart';
+import 'package:user_profile/features/profile/presentation/bloc/view_profile_cubit/view_profile_cubit.dart';
+import 'package:user_profile/features/profile/presentation/bloc/view_profile_cubit/view_profile_state.dart';
+import 'package:user_profile/features/profile/presentation/screens/edit_profile_screen.dart';
+import 'package:user_profile/features/profile/presentation/widgets/profile_item.dart';
 
 class ViewProfileScreen extends StatelessWidget {
   const ViewProfileScreen();
