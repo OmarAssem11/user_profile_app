@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class EditProfileImageWidget extends StatelessWidget {
-  const EditProfileImageWidget({
+class EditProfileImage extends StatelessWidget {
+  const EditProfileImage({
     required this.imageUrl,
     required this.onPressed,
   });

@@ -23,7 +23,7 @@ class CustomTextFormField extends StatelessWidget {
           hintText: hintText,
           prefixIcon: Icon(prefixIcon),
           border: const OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(20)),
+            borderRadius: BorderRadius.all(Radius.circular(16)),
           ),
           errorStyle: const TextStyle(fontSize: 13),
         ),
