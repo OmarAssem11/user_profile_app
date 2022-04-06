@@ -13,7 +13,6 @@ class CustomTextFormField extends StatelessWidget {
   final IconData prefixIcon;
   final TextInputType keyboardType;
   final String? Function(String?) validator;
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -24,8 +23,9 @@ class CustomTextFormField extends StatelessWidget {
           hintText: hintText,
           prefixIcon: Icon(prefixIcon),
           border: const OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(8)),
+            borderRadius: BorderRadius.all(Radius.circular(20)),
           ),
+          errorStyle: const TextStyle(fontSize: 13),
         ),
         autocorrect: false,
         keyboardType: keyboardType,

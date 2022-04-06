@@ -5,7 +5,6 @@ import 'package:final_project/features/auth/presentation/widgets/logout_widget.d
 import 'package:final_project/features/profile/presentation/bloc/view_profile_cubit/view_profile_cubit.dart';
 import 'package:final_project/features/profile/presentation/bloc/view_profile_cubit/view_profile_state.dart';
 import 'package:final_project/features/profile/presentation/screens/edit_profile_screen.dart';
-import 'package:final_project/features/profile/presentation/widgets/profile_image_widget.dart';
 import 'package:final_project/features/profile/presentation/widgets/profile_item_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -15,6 +14,9 @@ class ViewProfileScreen extends StatelessWidget {
   static const routeName = 'view_profile';
   @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
+    final screenHeight = screenSize.height;
+    final screenWidth = screenSize.width;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Profile'),
@@ -43,8 +45,40 @@ class ViewProfileScreen extends StatelessWidget {
               return Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ProfileImageWidget(
-                    user.imageUrl,
+                  SizedBox(
+                    height: screenHeight * .28,
+                    child: Stack(
+                      children: [
+                        Container(
+                          height: screenHeight * .23,
+                          width: double.infinity,
+                          margin: const EdgeInsets.symmetric(horizontal: 12),
+                          decoration: const BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(32)),
+                            image: DecorationImage(
+                              image: AssetImage(
+                                'assets/images/cover.jpg',
+                              ),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          bottom: 0,
+                          left: (screenWidth * .5) - 60,
+                          child: CircleAvatar(
+                            backgroundColor: Colors.white,
+                            radius: 60,
+                            child: CircleAvatar(
+                              backgroundImage: NetworkImage(
+                                user.imageUrl,
+                              ),
+                              radius: 55,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                   Text(
                     user.name,

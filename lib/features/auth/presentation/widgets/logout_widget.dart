@@ -40,14 +40,10 @@ class LogoutWidget extends StatelessWidget {
             builder: (_) => dialog,
           );
         },
-        child: const CircleAvatar(
-          radius: 18,
-          backgroundColor: Color.fromARGB(255, 212, 5, 5),
-          child: Icon(
-            Icons.logout,
-            size: 25,
-            color: Colors.white,
-          ),
+        child: const Icon(
+          Icons.logout,
+          size: 28,
+          color: Colors.black,
         ),
       ),
     );

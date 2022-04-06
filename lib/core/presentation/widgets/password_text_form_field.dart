@@ -9,7 +9,6 @@ class PasswordTextFormField extends StatefulWidget {
 }
 
 class _PasswordTextFormFieldState extends State<PasswordTextFormField> {
-  final focusNode = FocusNode();
   late bool isObscure;
   @override
   void initState() {
@@ -34,8 +33,9 @@ class _PasswordTextFormFieldState extends State<PasswordTextFormField> {
             onPressed: () => setState(() => isObscure = !isObscure),
           ),
           border: const OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(8)),
+            borderRadius: BorderRadius.all(Radius.circular(20)),
           ),
+          errorStyle: const TextStyle(fontSize: 13),
         ),
         obscureText: isObscure,
         autocorrect: false,
