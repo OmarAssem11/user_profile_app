@@ -24,7 +24,7 @@ class CustomElevatedButton extends StatelessWidget {
         ),
         shape: MaterialStateProperty.all(
           const RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(20)),
+            borderRadius: BorderRadius.all(Radius.circular(16)),
           ),
         ),
       ),

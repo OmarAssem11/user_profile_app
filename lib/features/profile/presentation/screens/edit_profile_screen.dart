@@ -7,7 +7,7 @@ import 'package:final_project/core/presentation/widgets/custom_text_form_field.d
 import 'package:final_project/features/profile/presentation/bloc/edit_profile_cubit/edit_profile_cubit.dart';
 import 'package:final_project/features/profile/presentation/bloc/edit_profile_cubit/edit_profile_state.dart';
 import 'package:final_project/features/profile/presentation/screens/view_profile_screen.dart';
-import 'package:final_project/features/profile/presentation/widgets/edit_profile_image_widget.dart';
+import 'package:final_project/features/profile/presentation/widgets/edit_profile_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
@@ -54,7 +54,7 @@ class EditProfileScreen extends StatelessWidget {
                 key: _formKey,
                 child: Column(
                   children: [
-                    EditProfileImageWidget(
+                    EditProfileImage(
                       imageUrl: user.imageUrl,
                       onPressed: () async {
                         imageFile = await _getImage();

@@ -24,6 +24,7 @@ ThemeData myTheme = ThemeData(
     foregroundColor: Colors.black,
     elevation: 0,
   ),
+  scaffoldBackgroundColor: Colors.white,
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ButtonStyle(
       textStyle: MaterialStateProperty.all(
@@ -41,8 +42,7 @@ ThemeData myTheme = ThemeData(
       textStyle: MaterialStateProperty.all(
         const TextStyle(
           fontSize: 18,
-          color: Colors.black,
-          fontWeight: FontWeight.bold,
+          fontWeight: FontWeight.w900,
         ),
       ),
       foregroundColor: MaterialStateProperty.all(const Color(0xffDF3155)),
@@ -61,6 +61,11 @@ ThemeData myTheme = ThemeData(
     ),
     headline3: TextStyle(
       fontSize: 24,
+      color: Colors.black,
+      fontWeight: FontWeight.bold,
+    ),
+    headline4: TextStyle(
+      fontSize: 16,
       color: Colors.black,
       fontWeight: FontWeight.bold,
     ),
