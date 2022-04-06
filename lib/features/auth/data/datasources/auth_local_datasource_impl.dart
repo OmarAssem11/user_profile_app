@@ -1,11 +1,11 @@
-import 'package:final_project/core/domain/datasources/local_datasource.dart';
 import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:user_profile/features/auth/domain/datasources/auth_local_datasource.dart';
 
-@Injectable(as: LocalDataSource)
-class LocalDataSourceImpl implements LocalDataSource {
+@Injectable(as: AuthLocalDataSource)
+class AuthLocalDataSourceImpl implements AuthLocalDataSource {
   final SharedPreferences _sharedPreferences;
-  LocalDataSourceImpl(this._sharedPreferences);
+  AuthLocalDataSourceImpl(this._sharedPreferences);
 
   @override
   Future<bool> saveToken(String token) async =>

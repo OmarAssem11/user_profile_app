@@ -1,20 +1,21 @@
 import 'package:dartz/dartz.dart';
-import 'package:final_project/core/data/models/user_mapper.dart';
-import 'package:final_project/core/data/models/user_model.dart';
-import 'package:final_project/core/domain/datasources/local_datasource.dart';
-import 'package:final_project/core/domain/entities/user.dart';
-import 'package:final_project/core/domain/error/failure.dart';
-import 'package:final_project/features/profile/data/datasources/profile_service.dart';
-import 'package:final_project/features/profile/domain/repositories/profile_repository.dart';
-import 'package:final_project/features/profile/domain/usecases/edit_profile.dart';
 import 'package:injectable/injectable.dart';
+import 'package:user_profile/core/data/constants/constants.dart';
+import 'package:user_profile/core/data/mappers/user_mapper.dart';
+import 'package:user_profile/core/data/models/user_model.dart';
+import 'package:user_profile/core/domain/entities/user.dart';
+import 'package:user_profile/core/domain/error/failure.dart';
+import 'package:user_profile/features/auth/domain/datasources/auth_local_datasource.dart';
+import 'package:user_profile/features/profile/domain/datasources/profile_remote_datasource.dart';
+import 'package:user_profile/features/profile/domain/repositories/profile_repository.dart';
+import 'package:user_profile/features/profile/domain/usecases/edit_profile_use_case.dart';
 
 @Injectable(as: ProfileRepository)
 class ProfileRepositoryImpl implements ProfileRepository {
-  final ProfileService _profileService;
-  final LocalDataSource _localDataSource;
+  final ProfileRemoteDataSource _profileRemoteDataSource;
+  final AuthLocalDataSource _localDataSource;
   ProfileRepositoryImpl(
-    this._profileService,
+    this._profileRemoteDataSource,
     this._localDataSource,
   );
 
@@ -22,10 +23,12 @@ class ProfileRepositoryImpl implements ProfileRepository {
   Future<Either<Failure, User>> viewProfile() async {
     try {
       final token = _localDataSource.getToken()!;
-      final user = await _profileService.viewProfile(token: 'Bearer $token');
+      final user = await _profileRemoteDataSource.viewProfile(
+        token: '$tokenType $token',
+      );
       return right(user);
     } catch (error) {
-      return left(Failure(error));
+      return left(const Failure('Error while viewing profile'));
     }
   }
 
@@ -36,11 +39,11 @@ class ProfileRepositoryImpl implements ProfileRepository {
     try {
       final token = _localDataSource.getToken()!;
       if (editProfileData.imageFile != null) {
-        final uploadedImageUrl = await _profileService.updateImage(
+        final uploadedImageUrl = await _profileRemoteDataSource.uploadImage(
           image: editProfileData.imageFile!,
         );
-        await _profileService.editProfile(
-          token: 'Bearer $token',
+        await _profileRemoteDataSource.editProfile(
+          token: '$tokenType $token',
           userModel: UserModel(
             name: editProfileData.user.name,
             email: editProfileData.user.email,
@@ -52,14 +55,14 @@ class ProfileRepositoryImpl implements ProfileRepository {
           ),
         );
       } else {
-        await _profileService.editProfile(
-          token: 'Bearer $token',
-          userModel: editProfileData.user.toModel(),
+        await _profileRemoteDataSource.editProfile(
+          token: '$tokenType $token',
+          userModel: editProfileData.user.toModel,
         );
       }
       return right(unit);
     } catch (error) {
-      return left(const Failure('Network error'));
+      return left(const Failure('Error while editing profile'));
     }
   }
 }

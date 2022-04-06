@@ -1,24 +1,35 @@
-import 'package:final_project/core/domain/error/error_toast.dart';
-import 'package:final_project/core/presentation/validation/validators.dart';
-import 'package:final_project/core/presentation/widgets/custom_elevated_button.dart';
-import 'package:final_project/core/presentation/widgets/custom_text_form_field.dart';
-import 'package:final_project/core/presentation/widgets/password_text_form_field.dart';
-import 'package:final_project/features/auth/presentation/bloc/auth_cubit.dart';
-import 'package:final_project/features/auth/presentation/bloc/auth_state.dart';
-import 'package:final_project/features/auth/presentation/screens/register_screen.dart';
-import 'package:final_project/features/profile/presentation/screens/view_profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:user_profile/core/presentation/util/error_toast.dart';
+import 'package:user_profile/core/presentation/validation/validators.dart';
+import 'package:user_profile/core/presentation/widgets/custom_elevated_button.dart';
+import 'package:user_profile/core/presentation/widgets/custom_text_form_field.dart';
+import 'package:user_profile/core/presentation/widgets/password_text_form_field.dart';
+import 'package:user_profile/features/auth/presentation/bloc/auth_cubit.dart';
+import 'package:user_profile/features/auth/presentation/bloc/auth_state.dart';
+import 'package:user_profile/features/auth/presentation/screens/register_screen.dart';
+import 'package:user_profile/features/profile/presentation/screens/view_profile_screen.dart';
 
-class LoginScreen extends StatelessWidget {
-  LoginScreen();
+class LoginScreen extends StatefulWidget {
+  const LoginScreen();
   static const routeName = '/';
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  late TextTheme textTheme;
+  @override
+  void didChangeDependencies() {
+    textTheme = Theme.of(context).textTheme;
+    super.didChangeDependencies();
+  }
+
   final _formKey = GlobalKey<FormState>();
   final emailController = TextEditingController(text: 'omar@gmail.com');
   final passwordController = TextEditingController(text: '123456');
   @override
   Widget build(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Form(
@@ -44,9 +55,9 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(height: 16),
               BlocBuilder<AuthCubit, AuthState>(
                 builder: (context, state) {
-                  bool isLoading = false;
+                  bool isButtonLoading = false;
                   state.maybeWhen(
-                    loading: () => isLoading = true,
+                    loading: () => isButtonLoading = true,
                     error: (error) => showErrorToast(errorMessage: error),
                     success: () =>
                         WidgetsBinding.instance!.addPostFrameCallback(
@@ -66,7 +77,7 @@ class LoginScreen extends StatelessWidget {
                         );
                       }
                     },
-                    isLoading: isLoading,
+                    isLoading: isButtonLoading,
                   );
                 },
               ),

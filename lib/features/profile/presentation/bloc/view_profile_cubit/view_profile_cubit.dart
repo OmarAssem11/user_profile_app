@@ -1,15 +1,15 @@
-import 'package:final_project/core/domain/usecases/usecase.dart';
-import 'package:final_project/features/profile/domain/usecases/view_profile.dart';
-import 'package:final_project/features/profile/presentation/bloc/view_profile_cubit/view_profile_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
+import 'package:user_profile/core/domain/usecases/usecase.dart';
+import 'package:user_profile/features/profile/domain/usecases/view_profile_use_case.dart';
+import 'package:user_profile/features/profile/presentation/bloc/view_profile_cubit/view_profile_state.dart';
 
 @lazySingleton
 class ViewProfileCubit extends Cubit<ViewProfileState> {
   ViewProfileCubit(
     this._viewUserCase,
   ) : super(const ViewProfileInitial());
-  final ViewProfile _viewUserCase;
+  final ViewProfileUseCase _viewUserCase;
 
   Future<void> viewProfile() async {
     emit(const ViewProfileLoading());

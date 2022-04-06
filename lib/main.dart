@@ -1,9 +1,9 @@
-import 'package:final_project/core/domain/di/injectable.dart';
-import 'package:final_project/core/presentation/bloc/bloc_observer.dart';
-import 'package:final_project/core/presentation/router/app_router.dart';
-import 'package:final_project/core/presentation/theme/my_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:user_profile/core/domain/di/injectable.dart';
+import 'package:user_profile/core/presentation/bloc/bloc_observer.dart';
+import 'package:user_profile/core/presentation/router/app_router.dart';
+import 'package:user_profile/core/presentation/theme/my_theme.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: myTheme,
-      onGenerateRoute: AppRouter.onGenerateRoute,
+      onGenerateRoute: onGenerateRoute,
     );
   }
 }

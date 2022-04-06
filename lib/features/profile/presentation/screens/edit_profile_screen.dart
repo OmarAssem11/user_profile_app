@@ -1,31 +1,47 @@
 import 'dart:io';
-import 'package:final_project/core/domain/entities/user.dart';
-import 'package:final_project/core/domain/error/error_toast.dart';
-import 'package:final_project/core/presentation/validation/validators.dart';
-import 'package:final_project/core/presentation/widgets/custom_elevated_button.dart';
-import 'package:final_project/core/presentation/widgets/custom_text_form_field.dart';
-import 'package:final_project/features/profile/presentation/bloc/edit_profile_cubit/edit_profile_cubit.dart';
-import 'package:final_project/features/profile/presentation/bloc/edit_profile_cubit/edit_profile_state.dart';
-import 'package:final_project/features/profile/presentation/screens/view_profile_screen.dart';
-import 'package:final_project/features/profile/presentation/widgets/edit_profile_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:user_profile/core/domain/entities/user.dart';
+import 'package:user_profile/core/presentation/util/error_toast.dart';
+import 'package:user_profile/core/presentation/validation/validators.dart';
+import 'package:user_profile/core/presentation/widgets/custom_elevated_button.dart';
+import 'package:user_profile/core/presentation/widgets/custom_text_form_field.dart';
+import 'package:user_profile/features/profile/presentation/bloc/edit_profile_cubit/edit_profile_cubit.dart';
+import 'package:user_profile/features/profile/presentation/bloc/edit_profile_cubit/edit_profile_state.dart';
+import 'package:user_profile/features/profile/presentation/screens/view_profile_screen.dart';
+import 'package:user_profile/features/profile/presentation/widgets/edit_profile_image.dart';
 
-class EditProfileScreen extends StatelessWidget {
+class EditProfileScreen extends StatefulWidget {
   const EditProfileScreen();
   static const routeName = 'edit_profile';
   @override
+  State<EditProfileScreen> createState() => _EditProfileScreenState();
+}
+
+class _EditProfileScreenState extends State<EditProfileScreen> {
+  late User user;
+  late TextEditingController nameController;
+  late TextEditingController emailController;
+  late TextEditingController phoneController;
+  late TextEditingController addressController;
+  late TextEditingController ageController;
+  @override
+  void didChangeDependencies() {
+    user = ModalRoute.of(context)!.settings.arguments! as User;
+    nameController = TextEditingController(text: user.name);
+    emailController = TextEditingController(text: user.email);
+    phoneController = TextEditingController(text: user.phone);
+    addressController = TextEditingController(text: user.address);
+    ageController = TextEditingController(text: user.age);
+    super.didChangeDependencies();
+  }
+
+  final _formKey = GlobalKey<FormState>();
+  final passwordController = TextEditingController();
+  File? imageFile;
+  @override
   Widget build(BuildContext context) {
-    final user = ModalRoute.of(context)!.settings.arguments! as User;
-    final _formKey = GlobalKey<FormState>();
-    final nameController = TextEditingController(text: user.name);
-    final emailController = TextEditingController(text: user.email);
-    final passwordController = TextEditingController();
-    final phoneController = TextEditingController(text: user.phone);
-    final addressController = TextEditingController(text: user.address);
-    final ageController = TextEditingController(text: user.age);
-    File? imageFile;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Edit profile'),
