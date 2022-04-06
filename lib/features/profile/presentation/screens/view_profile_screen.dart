@@ -9,15 +9,16 @@ import 'package:user_profile/features/profile/presentation/bloc/view_profile_cub
 import 'package:user_profile/features/profile/presentation/screens/edit_profile_screen.dart';
 import 'package:user_profile/features/profile/presentation/widgets/profile_item.dart';
 
-class ViewProfileScreen extends StatelessWidget {
+class ViewProfileScreen extends StatefulWidget {
   const ViewProfileScreen();
   static const routeName = 'view_profile';
   @override
+  State<ViewProfileScreen> createState() => _ViewProfileScreenState();
+}
+
+class _ViewProfileScreenState extends State<ViewProfileScreen> {
+  @override
   Widget build(BuildContext context) {
-    final screenSize = MediaQuery.of(context).size;
-    final screenHeight = screenSize.height;
-    final screenWidth = screenSize.width;
-    final textTheme = Theme.of(context).textTheme;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Profile'),
@@ -43,6 +44,9 @@ class ViewProfileScreen extends StatelessWidget {
             loading: () => const Center(child: CircularProgressIndicator()),
             error: (error) => Center(child: Text(error)),
             success: (user) {
+              final screenSize = MediaQuery.of(context).size;
+              final screenHeight = screenSize.height;
+              final screenWidth = screenSize.width;
               return Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 18),
                 child: Column(
@@ -87,7 +91,7 @@ class ViewProfileScreen extends StatelessWidget {
                       children: [
                         Text(
                           user.name,
-                          style: textTheme.headline1,
+                          style: Theme.of(context).textTheme.headline1,
                         ),
                         const SizedBox(width: 6),
                         const CircleAvatar(

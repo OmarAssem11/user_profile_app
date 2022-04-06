@@ -4,7 +4,7 @@ import 'package:user_profile/core/domain/usecases/usecase.dart';
 import 'package:user_profile/features/profile/domain/usecases/view_profile_use_case.dart';
 import 'package:user_profile/features/profile/presentation/bloc/view_profile_cubit/view_profile_state.dart';
 
-@lazySingleton
+@injectable
 class ViewProfileCubit extends Cubit<ViewProfileState> {
   ViewProfileCubit(
     this._viewUserCase,

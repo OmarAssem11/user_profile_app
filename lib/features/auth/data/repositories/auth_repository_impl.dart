@@ -52,7 +52,7 @@ class AuthRepositoryImpl implements AuthRepository {
     try {
       final token = _localDataSource.getToken()!;
       await _localDataSource.deleteToken();
-      _authRemoteDataSource.logout(token: token);
+      await _authRemoteDataSource.logout(token: token);
       return right(unit);
     } catch (error) {
       return left(const Failure('Error while logout'));

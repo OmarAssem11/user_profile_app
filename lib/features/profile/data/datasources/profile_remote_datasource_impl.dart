@@ -1,9 +1,11 @@
 import 'dart:io';
+import 'package:injectable/injectable.dart';
 import 'package:user_profile/core/data/models/user_model.dart';
 import 'package:user_profile/features/profile/data/datasources/profile_api_service.dart';
 import 'package:user_profile/features/profile/data/models/image_model.dart';
 import 'package:user_profile/features/profile/domain/datasources/profile_remote_datasource.dart';
 
+@LazySingleton(as: ProfileRemoteDataSource)
 class ProfileRemoteDataSourceImpl implements ProfileRemoteDataSource {
   final ProfileApiService _profileApiService;
   const ProfileRemoteDataSourceImpl(this._profileApiService);
