@@ -1,28 +1,25 @@
-Simple flutter app with authentication and edit profile
+# User profile app using Clean Architecture(TDD)
 
-Practice clean Architecture (TDD)
+## Features:
 
-API: https://github.com/artscss/api_sanctum_package
+* Login
+* Register
+* View profile
+* Edit profile
 
-Features:
+## Packages:
 
-Login
-Register
-View profile
-Edit profile
+* dio
+* dartz
+* flutter_bloc
+* freezed
+* retrofit
+* get_it
+* injectable
+* equatable
+* shared_preferences
+* image_picker
+* fluttertoast
+* intl
 
-Packages:
-
-dartz,
-dio,
-equatable,
-flutter_bloc,
-fluttertoast,
-freezed,
-freezed_annotation,
-get_it,
-image_picker,
-injectable,
-intl,
-retrofit,
-shared_preferences.
+API: github.com/artscss/api_sanctum_package
