@@ -1,4 +1,4 @@
-# User profile app using Clean Architecture(TDD)
+# User profile app using Clean Architecture
 
 ## Features:
 
